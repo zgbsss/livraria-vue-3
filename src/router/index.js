@@ -19,7 +19,7 @@ const router = createRouter({
     {
       path: '/editoras',
       name: 'editoras',
-      component: EditoraView, 
+      component: EditoraView,
     }
   ],
 });

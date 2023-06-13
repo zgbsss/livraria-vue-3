@@ -49,5 +49,3 @@ export default {
     </li>
   </ul>
 </template>
-
-<style></style>
