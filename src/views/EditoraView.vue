@@ -36,14 +36,14 @@ export default {
   <h1>Editora</h1>
   <hr />
   <div class="form">
-    <input type="text" v-model="editora.descricao" placeholder="Descrição" />
+    <input type="text" v-model="editora.nome" placeholder="Nome" />
     <button @click="salvar">Salvar</button>
   </div>
   <hr />
   <ul>
     <li v-for="editora in editoras" :key="editora.id">
       <span @click="editar(editora)">
-        {{ editora.nome }} - {{ editora.descricao }}</span
+        {{ editora.id }} - {{ editora.nome }}</span
       >
       <button @click="excluir(editora)">X</button>
     </li>
