@@ -21,6 +21,13 @@ export default {
       (this.autor = {}),
         (this.autores = await autoresApi.buscarTodosOsAutores());
     },
+    editar(autor) {
+      Object.assign(this.autores, autor);
+    },
+    async excluir(autor) {
+      await autoresApi.excluirAutor(autor.id);
+      this.autores = await autoresApi.buscarTodosOsAutores();
+    },
   },
 };
 </script>
@@ -34,7 +41,7 @@ export default {
   </div>
   <hr />
   <li v-for="autor in autores" :key="autor.id">
-    <span>{{ autor.id }} {{ autor.nome }}</span>
-    <button>X</button>
+    <span @click="editar(autor)">{{ autor.id }} {{ autor.nome }}</span>
+    <button @click="excluir(autor)">X</button>
   </li>
 </template>
